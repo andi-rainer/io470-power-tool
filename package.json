@@ -1,0 +1,23 @@
+{
+  "name": "io470-power-tool",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Interactive power-setting tool for the Continental IO-470-F, based on the manufacturer's Sea Level vs Altitude Performance Curve",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "build:artifact": "vite build --mode artifact && node scripts/make-artifact.mjs",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "vue": "3.4.21"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "5.0.4",
+    "typescript": "5.4.5",
+    "vite": "5.2.11",
+    "vitest": "1.6.0",
+    "vue-tsc": "2.0.16"
+  }
+}

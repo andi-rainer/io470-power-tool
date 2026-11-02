@@ -1,0 +1,35 @@
+/* Layout: control column + chart plate, full-width table below. Avionics cue: magenta = active construction. */
+:root {
+  --bg: #f4f5f2; --fg: #16191d; --muted: #5a616b; --panel: #fbfbf9; --line: #d5d8d2; --hover: #eceee8;
+  --accent: #a3117f;
+  --ok: #1d6b3a; --ok-bg: #e2f0e5; --warn: #8a4b06; --warn-bg: #fbeed8; --bad: #b3202a; --bad-bg: #f8e1e1;
+  --font-display: 'Barlow Semi Condensed', 'Arial Narrow', system-ui, sans-serif;
+  --font-ui: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #121417; --fg: #e7e9ec; --muted: #9aa1ab; --panel: #1a1d21; --line: #2e333a; --hover: #23272c;
+    --accent: #f05ccf;
+    --ok: #7fd59a; --ok-bg: #16301f; --warn: #f2b45a; --warn-bg: #33260f; --bad: #ff8a8f; --bad-bg: #3a1618;
+    color-scheme: dark;
+  }
+}
+:root[data-theme='dark'] {
+  --bg: #121417; --fg: #e7e9ec; --muted: #9aa1ab; --panel: #1a1d21; --line: #2e333a; --hover: #23272c;
+  --accent: #f05ccf;
+  --ok: #7fd59a; --ok-bg: #16301f; --warn: #f2b45a; --warn-bg: #33260f; --bad: #ff8a8f; --bad-bg: #3a1618;
+  color-scheme: dark;
+}
+* { box-sizing: border-box }
+html, body { margin: 0 }
+body { background: var(--bg); color: var(--fg); font: 15px/1.45 var(--font-ui); -webkit-font-smoothing: antialiased }
+input, select, button { font: inherit; color: inherit }
+input.num, select { background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 4px 6px; font-family: var(--font-mono); font-size: .9rem; min-width: 0 }
+input.num { width: 5.5em }
+.btn { border: 1px solid var(--fg); background: var(--fg); color: var(--bg); border-radius: 4px; padding: 6px 12px; cursor: pointer; font-weight: 600; font-size: .88rem; justify-self: start }
+.btn.ghost { background: transparent; color: var(--fg); border-color: var(--line) }
+.icon { border: 1px solid var(--line); background: transparent; border-radius: 4px; width: 28px; height: 28px; cursor: pointer; color: var(--muted) }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important } }
